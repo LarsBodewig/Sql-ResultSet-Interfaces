@@ -9,10 +9,34 @@ import org.junit.jupiter.api.Test;
 class ResultSetInterfacesTest {
 
 	@Test
+	public void toCustomTest() {
+		interface CloseableSql {
+			void close() throws SQLException;
+		}
+		ResultSet rs = new TestResultSet();
+		assertDoesNotThrow(() -> {
+			CloseableSql res = ResultSetInterfaces.toCustom(rs, CloseableSql.class);
+			res.close();
+		});
+	}
+
+	@Test
+	public void toCustomTest2() {
+		interface CombinedInterface extends ResultSetReader, ResultSetTraverser {
+		}
+		ResultSet rs = new TestResultSet();
+		assertDoesNotThrow(() -> {
+			CombinedInterface res = ResultSetInterfaces.toCustom(rs, CombinedInterface.class);
+			res.findColumn(null);
+			res.absolute(0);
+		});
+	}
+
+	@Test
 	public void toMetaTest() {
 		ResultSet rs = new TestResultSet();
 		assertDoesNotThrow(() -> {
-			ResultSetMeta res = InterfaceDelegator.delegate(rs, ResultSetMeta.class);
+			ResultSetMeta res = ResultSetInterfaces.toMeta(rs);
 			res.clearWarnings();
 		});
 	}
@@ -21,7 +45,7 @@ class ResultSetInterfacesTest {
 	public void toReaderTest() {
 		ResultSet rs = new TestResultSet();
 		assertDoesNotThrow(() -> {
-			ResultSetReader res = InterfaceDelegator.delegate(rs, ResultSetReader.class);
+			ResultSetReader res = ResultSetInterfaces.toReader(rs);
 			res.findColumn(null);
 		});
 	}
@@ -30,7 +54,7 @@ class ResultSetInterfacesTest {
 	public void toTraverserTest() {
 		ResultSet rs = new TestResultSet();
 		assertDoesNotThrow(() -> {
-			ResultSetTraverser res = InterfaceDelegator.delegate(rs, ResultSetTraverser.class);
+			ResultSetTraverser res = ResultSetInterfaces.toTraverser(rs);
 			res.absolute(0);
 		});
 	}
@@ -39,20 +63,8 @@ class ResultSetInterfacesTest {
 	public void toUpdaterTest() {
 		ResultSet rs = new TestResultSet();
 		assertDoesNotThrow(() -> {
-			ResultSetUpdater res = InterfaceDelegator.delegate(rs, ResultSetUpdater.class);
+			ResultSetUpdater res = ResultSetInterfaces.toUpdater(rs);
 			res.cancelRowUpdates();
-		});
-	}
-
-	@Test
-	public void toCustomTest() {
-		interface CloseableSql {
-			void close() throws SQLException;
-		}
-		ResultSet rs = new TestResultSet();
-		assertDoesNotThrow(() -> {
-			CloseableSql res = InterfaceDelegator.delegate(rs, CloseableSql.class);
-			res.close();
 		});
 	}
 }
