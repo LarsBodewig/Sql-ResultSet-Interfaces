@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>dev.bodewig.sql-resultset-interfaces</groupId>
     <artifactId>sql-resultset-interfaces</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Sql ResultSet Interfaces</name>
     <description>Subsets of the Sql ResultSet interface</description>
     <url>https://github.com/LarsBodewig/Sql-ResultSet-Interfaces</url>
@@ -114,8 +114,11 @@
                         <executions>
                             <execution>
                                 <goals>
-                                    <goal>javadoc-no-fork</goal>
+                                    <goal>jar</goal>
                                 </goals>
+                                <configuration>
+                                    <failOnWarnings>false</failOnWarnings>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>

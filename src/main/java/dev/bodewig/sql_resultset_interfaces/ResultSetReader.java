@@ -137,7 +137,7 @@ public interface ResultSetReader {
 	/** see {@link ResultSet#getObject(int columnIndex)} */
 	Object getObject(int columnIndex) throws SQLException;
 
-	/** see {@link ResultSet#getObject(int columnIndex, Class<T> type)} */
+	/** see {@link ResultSet#getObject(int columnIndex, Class type)} */
 	public <T> T getObject(int columnIndex, Class<T> type) throws SQLException;
 
 	/** see {@link ResultSet#getObject(int columnIndex, java.util.Map map)} */
@@ -146,7 +146,7 @@ public interface ResultSetReader {
 	/** see {@link ResultSet#getObject(String columnLabel)} */
 	Object getObject(String columnLabel) throws SQLException;
 
-	/** see {@link ResultSet#getObject(String columnLabel, Class<T> type)} */
+	/** see {@link ResultSet#getObject(String columnLabel, Class type)} */
 	public <T> T getObject(String columnLabel, Class<T> type) throws SQLException;
 
 	/** see {@link ResultSet#getObject(String columnLabel, java.util.Map map)} */

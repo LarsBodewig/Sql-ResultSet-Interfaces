@@ -164,10 +164,10 @@ public interface ResultSetUpdater {
 	/** see {@link ResultSet#updateByte(String columnLabel, byte x)} */
 	void updateByte(String columnLabel, byte x) throws SQLException;
 
-	/** see {@link ResultSet#updateBytes(int columnIndex, byte x[])} */
+	/** see {@link ResultSet#updateBytes(int columnIndex, byte[] x)} */
 	void updateBytes(int columnIndex, byte x[]) throws SQLException;
 
-	/** see {@link ResultSet#updateBytes(String columnLabel, byte x[])} */
+	/** see {@link ResultSet#updateBytes(String columnLabel, byte[] x)} */
 	void updateBytes(String columnLabel, byte x[]) throws SQLException;
 
 	/**
@@ -329,16 +329,16 @@ public interface ResultSetUpdater {
 	void updateObject(int columnIndex, Object x, int scaleOrLength) throws SQLException;
 
 	/**
-	 * see {@link ResultSet#void updateObject(int columnIndex, Object x, SQLType
-	 * targetSqlType)}
+	 * see
+	 * {@link ResultSet#updateObject(int columnIndex, Object x, SQLType targetSqlType)}
 	 */
 	default void updateObject(int columnIndex, Object x, SQLType targetSqlType) throws SQLException {
 		throw new SQLFeatureNotSupportedException("updateObject not implemented");
 	}
 
 	/**
-	 * see {@link ResultSet#void updateObject(int columnIndex, Object x, SQLType
-	 * targetSqlType, int scaleOrLength)}
+	 * see
+	 * {@link ResultSet#updateObject(int columnIndex, Object x, SQLType targetSqlType, int scaleOrLength)}
 	 */
 	default void updateObject(int columnIndex, Object x, SQLType targetSqlType, int scaleOrLength) throws SQLException {
 		throw new SQLFeatureNotSupportedException("updateObject not implemented");
@@ -354,16 +354,16 @@ public interface ResultSetUpdater {
 	void updateObject(String columnLabel, Object x, int scaleOrLength) throws SQLException;
 
 	/**
-	 * see {@link ResultSet#void updateObject(String columnLabel, Object x, SQLType
-	 * targetSqlType)}
+	 * see
+	 * {@link ResultSet#updateObject(String columnLabel, Object x, SQLType targetSqlType)}
 	 */
 	default void updateObject(String columnLabel, Object x, SQLType targetSqlType) throws SQLException {
 		throw new SQLFeatureNotSupportedException("updateObject not implemented");
 	}
 
 	/**
-	 * see {@link ResultSet#void updateObject(String columnLabel, Object x, SQLType
-	 * targetSqlType, int scaleOrLength)}
+	 * see
+	 * {@link ResultSet#updateObject(String columnLabel, Object x, SQLType targetSqlType, int scaleOrLength)}
 	 */
 	default void updateObject(String columnLabel, Object x, SQLType targetSqlType, int scaleOrLength)
 			throws SQLException {
