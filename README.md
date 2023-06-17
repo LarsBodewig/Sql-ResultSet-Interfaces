@@ -1,3 +1,5 @@
+[![Available on Maven Central](https://img.shields.io/maven-central/v/dev.bodewig.sql-resultset-interfaces/sql-resultset-interfaces?label=Available%20on%20Maven%20Central)](https://central.sonatype.com/artifact/dev.bodewig.sql-resultset-interfaces/sql-resultset-interfaces)
+
 # Sql-ResultSet-Interfaces
 
 A small dependency mostly aimed at frameworks to enhance APIs with specialized `ResultSet` interfaces.
