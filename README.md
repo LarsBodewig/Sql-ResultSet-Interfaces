@@ -12,6 +12,14 @@ This is just a workaround for Java's bloated `ResultSet` interface.
 
 ## Usage
 
+```xml
+<dependency>
+    <groupId>dev.bodewig.sql-resultset-interfaces</groupId>
+    <artifactId>sql-resultset-interfaces</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+</dependency>
+```
+
 The class `ResultSetInterfaces` is the main entry point offering a method for each predefined interfaces and `toCustom(ResultSet, Class<T>)` for custom interfaces:
 
 ```java
