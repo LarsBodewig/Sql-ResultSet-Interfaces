@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>dev.bodewig.sql-resultset-interfaces</groupId>
     <artifactId>sql-resultset-interfaces</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>Sql ResultSet Interfaces</name>
     <description>Subsets of the Sql ResultSet interface</description>
     <url>https://github.com/LarsBodewig/Sql-ResultSet-Interfaces</url>
