@@ -8,22 +8,15 @@ import java.lang.reflect.Proxy;
 /**
  * Dynamic proxy delegating calls of a subset of {@code T}'s methods to an
  * instance of {@code T}
- * 
- * @param <T>
- *            the delegated type
+ *
+ * @param <T> the delegated type
  */
-class InterfaceDelegator<T> implements InvocationHandler {
+record InterfaceDelegator<T>(T target) implements InvocationHandler {
 
 	@SuppressWarnings("unchecked")
 	public static <V, T> V delegate(T target, Class<V> iface) {
 		return (V) Proxy.newProxyInstance(InterfaceDelegator.class.getClassLoader(), new Class<?>[]{iface},
-				new InterfaceDelegator<T>(target));
-	}
-
-	protected final T target;
-
-	public InterfaceDelegator(T target) {
-		this.target = target;
+                new InterfaceDelegator<>(target));
 	}
 
 	@Override

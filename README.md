@@ -65,8 +65,3 @@ closeableRs.close();
 ```
 
 You can also mix existing interfaces and single methods.
-
-
-## Development
-
-Run `git config --add include.path ../.gitconfig` to include the template config in your project config.

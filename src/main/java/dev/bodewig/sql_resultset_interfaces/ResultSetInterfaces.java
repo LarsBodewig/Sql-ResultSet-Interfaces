@@ -7,7 +7,7 @@ import java.sql.ResultSet;
  * Combine multiple interfaces at once with
  * {@link ResultSetInterfaces#toCustom(ResultSet, Class)}.
  */
-public class ResultSetInterfaces {
+public final class ResultSetInterfaces {
 
 	/**
 	 * Cast a {@code ResultSet} to a special interface containing only the custom

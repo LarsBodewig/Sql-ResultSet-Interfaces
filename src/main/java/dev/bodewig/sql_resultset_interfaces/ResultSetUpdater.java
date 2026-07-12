@@ -165,10 +165,10 @@ public interface ResultSetUpdater {
 	void updateByte(String columnLabel, byte x) throws SQLException;
 
 	/** see {@link ResultSet#updateBytes(int columnIndex, byte[] x)} */
-	void updateBytes(int columnIndex, byte x[]) throws SQLException;
+	void updateBytes(int columnIndex, byte[] x) throws SQLException;
 
 	/** see {@link ResultSet#updateBytes(String columnLabel, byte[] x)} */
-	void updateBytes(String columnLabel, byte x[]) throws SQLException;
+	void updateBytes(String columnLabel, byte[] x) throws SQLException;
 
 	/**
 	 * see
