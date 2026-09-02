@@ -29,7 +29,6 @@ jobs:
         if: steps.restore-cache.outputs.cache-hit == 'true'
         id: read-cache
         run: echo "cached_sha=$(cat ${{ runner.temp }}/.dependabot-renormalize)" >> $GITHUB_OUTPUT
-      # codeql[actions/actions-untrusted-checkout-critical] Suppress warning because job is strictly gated to authenticated dependabot[bot] actor
       - name: Checkout repository
         if: github.event.pull_request.head.sha != steps.read-cache.outputs.cached_sha
         uses: actions/checkout@v7
@@ -54,6 +53,7 @@ jobs:
         if: steps.author-check.outputs.is_dependabot == 'true'
         id: git-check
         run: |
+          git diff -w
           if [ -n "$(git status --porcelain)" ]; then
             echo "changes=true" >> $GITHUB_OUTPUT
           else
