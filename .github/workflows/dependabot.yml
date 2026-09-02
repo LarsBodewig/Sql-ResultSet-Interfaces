@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Restore Job Cache
         id: restore-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ runner.temp }}/.dependabot-renormalize
           key: dependabot-renormalize-${{ github.event.pull_request.number }}
@@ -73,7 +73,7 @@ jobs:
         run: echo "$(git rev-parse HEAD)" > ${{ runner.temp }}/.dependabot-renormalize
       - name: Save Job Cache
         if: steps.git-check.outputs.changes == 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: ${{ runner.temp }}/.dependabot-renormalize
           key: dependabot-renormalize-${{ github.event.pull_request.number }}
