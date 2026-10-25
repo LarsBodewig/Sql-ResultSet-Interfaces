@@ -18,7 +18,7 @@ This is just a workaround for Java's bloated `ResultSet` interface.
 <dependency>
     <groupId>dev.bodewig.sql-resultset-interfaces</groupId>
     <artifactId>sql-resultset-interfaces</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
