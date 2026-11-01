@@ -32,7 +32,7 @@ public final class ResultSetInterfaces {
 
 	/**
 	 * Cast a {@code ResultSet} to a special interface containing only methods
-	 * operating on the meta data
+	 * operating on the metadata
 	 * 
 	 * @param rs
 	 *            the {@code ResultSet} to cast

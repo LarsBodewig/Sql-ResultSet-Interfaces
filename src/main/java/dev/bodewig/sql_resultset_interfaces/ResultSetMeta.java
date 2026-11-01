@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 /**
  * Subset of the {@link ResultSet} interface containing only methods operating
- * on the meta data
+ * on the metadata
  * 
  * @see ResultSet
  */

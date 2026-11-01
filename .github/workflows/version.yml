@@ -1,7 +1,7 @@
 # Updates the maven version and checks in
 # ---
-# Add the following Github secrets from your Secret Manager
-# - PERSONAL_GITHUB_TOKEN: personal Github token
+# Add the following GitHub secrets from your Secret Manager
+# - PERSONAL_GITHUB_TOKEN: personal GitHub token
 
 name: Version
 

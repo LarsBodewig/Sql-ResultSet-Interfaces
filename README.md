@@ -38,7 +38,7 @@ rsReader.deleteRow(); // method not in ResultSetReader -> does not compile
 
 The predefined interfaces are very simple:
 
-* `ResultSetMeta` contains methods operating on the meta data,
+* `ResultSetMeta` contains methods operating on the metadata,
 * `ResultSetReader` contains data reading methods,
 * `ResultSetTraverser` contains traversing methods,
 * `ResultSetUpdater` contains data writing methods.
